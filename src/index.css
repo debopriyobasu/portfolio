@@ -96,4 +96,7 @@ main {
   .m-mt-1 {
     margin-top: 1rem;
   }
+  h1 {
+    font-size: var(--font-size-h1);
+  }
 }
