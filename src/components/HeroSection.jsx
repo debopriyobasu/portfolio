@@ -1,4 +1,4 @@
-import "./HeroSection.css";
+import "../styles/HeroSection.css";
 import useGreeting from "../hooks/useGreeting";
 import heroImage from "../assets/hero_image.webp";
 const HeroSection = () => {

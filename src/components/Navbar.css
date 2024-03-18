@@ -1,7 +1,0 @@
-nav ul {
-  display: flex;
-  gap: 1rem;
-}
-nav > ul > li {
-  list-style-type: none;
-}

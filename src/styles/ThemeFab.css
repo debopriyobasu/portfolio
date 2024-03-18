@@ -1,0 +1,19 @@
+.theme-icon {
+  width: 2rem;
+  height: 2rem;
+}
+button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 3;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+[data-theme="dark"] .theme-icon {
+  color: var(--font-dark);
+}
+[data-theme="light"] .theme-icon {
+  color: var(--font-light);
+}

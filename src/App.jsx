@@ -1,11 +1,11 @@
-import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
+import ThemeFab from "./components/ThemeFab";
 function App() {
   return (
-    <>
-      <Header />
+    <main>
+      <ThemeFab />
       <HeroSection />
-    </>
+    </main>
   );
 }
 
