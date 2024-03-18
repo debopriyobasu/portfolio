@@ -1,7 +1,10 @@
+import Header from "./components/Header";
+import HeroSection from "./components/HeroSection";
 function App() {
   return (
     <>
-      <h1>Coming soon...</h1>
+      <Header />
+      <HeroSection />
     </>
   );
 }
