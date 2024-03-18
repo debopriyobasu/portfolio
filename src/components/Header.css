@@ -1,0 +1,36 @@
+header {
+  box-shadow: 3px 3px 7px 2px rgba(0, 0, 0, 0.03);
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+[data-theme="dark"] header {
+  box-shadow: 3px 3px 7px 2px rgba(255, 255, 255, 0.03);
+}
+[data-theme="dark"] a,
+[data-theme="dark"] a:visited {
+  color: var(--font-dark);
+}
+header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: cursive;
+  cursor: pointer;
+}
+header button {
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+.theme-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+[data-theme="dark"] .theme-icon {
+  color: var(--font-dark);
+}
