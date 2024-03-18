@@ -1,5 +1,6 @@
 import "./HeroSection.css";
 import useGreeting from "../hooks/useGreeting";
+import heroImage from "../assets/hero_image.webp";
 const HeroSection = () => {
   const greeting = useGreeting();
   return (
@@ -14,11 +15,7 @@ const HeroSection = () => {
         </h3>
       </div>
       <figure role="img" aria-label="Profile photo of Debopriyo Basu">
-        <img
-          src="../src/assets/hero_image.webp"
-          alt="Debopriyo Basu"
-          id="hero-image"
-        />
+        <img src={heroImage} alt="Debopriyo Basu" id="hero-image" />
       </figure>
       <hr className="gradient-overlay" />
     </section>
