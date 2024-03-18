@@ -1,14 +1,23 @@
 section#hero {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr) [12];
   grid-template-columns: repeat(12, 1fr);
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: calc(100dvh - 4rem);
 }
 #hero-text {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
   grid-column: 1 / span 7;
 }
 figure {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 5;
   grid-column: 8 / span 5;
   align-self: flex-end;
 }
@@ -16,29 +25,36 @@ figure img {
   vertical-align: bottom;
 }
 .gradient-overlay {
-  display: none;
+  height: 0;
+  width: 0;
 }
 #hero-image {
+  -webkit-filter: grayscale(0.7);
   filter: grayscale(0.7);
+  -o-object-fit: contain;
   object-fit: contain;
   width: 100%;
 }
 #hero-image:hover {
+  -webkit-filter: grayscale(0);
   filter: grayscale(0);
+  -webkit-transition: -webkit-filter 0.5s ease-in-out;
+  transition: -webkit-filter 0.5s ease-in-out;
+  -o-transition: filter 0.5s ease-in-out;
   transition: filter 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out, -webkit-filter 0.5s ease-in-out;
 }
 @media (width <= 1024px) {
   section#hero {
+    -ms-grid-columns: (1fr) [4];
     grid-template-columns: repeat(4, 1fr);
     position: relative;
     height: calc(100dvh - 4rem);
-    overflow: hidden;
   }
   figure {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
     grid-column: 1 / span 4;
-  }
-  .gradient-overlay {
-    display: block;
   }
   .gradient-overlay::before {
     content: "";
@@ -49,6 +65,18 @@ figure img {
     height: 100%;
   }
   [data-theme="light"] .gradient-overlay::before {
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(rgba(255, 255, 255, 0.8)),
+      to(transparent)
+    );
+    background-image: -o-linear-gradient(
+      bottom,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
     background-image: linear-gradient(
       to top,
       rgba(255, 255, 255, 0.8),
@@ -56,12 +84,26 @@ figure img {
     );
   }
   [data-theme="dark"] .gradient-overlay::before {
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(rgba(0, 0, 0, 0.8)),
+      to(transparent)
+    );
+    background-image: -o-linear-gradient(
+      bottom,
+      rgba(0, 0, 0, 0.8),
+      transparent
+    );
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   }
   #hero-image {
     padding-top: 2rem;
   }
   #hero-text {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
     grid-column: 1 / span 4;
     position: absolute;
     bottom: 0;
@@ -75,6 +117,7 @@ figure img {
   }
 
   #hero-text > * {
+    -webkit-filter: contrast(1.5);
     filter: contrast(1.5);
   }
 }
