@@ -24,9 +24,13 @@ figure {
 figure img {
   vertical-align: bottom;
 }
-.gradient-overlay {
+hr.gradient-overlay {
   height: 0;
   width: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  display: none;
 }
 #hero-image {
   -webkit-filter: grayscale(0.7);
@@ -40,7 +44,6 @@ figure img {
   filter: grayscale(0);
   -webkit-transition: -webkit-filter 0.5s ease-in-out;
   transition: -webkit-filter 0.5s ease-in-out;
-  -o-transition: filter 0.5s ease-in-out;
   transition: filter 0.5s ease-in-out;
   transition: filter 0.5s ease-in-out, -webkit-filter 0.5s ease-in-out;
 }
@@ -49,12 +52,15 @@ figure img {
     -ms-grid-columns: (1fr) [4];
     grid-template-columns: repeat(4, 1fr);
     position: relative;
-    height: calc(100dvh - 4rem);
+    height: auto;
   }
   figure {
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
     grid-column: 1 / span 4;
+  }
+  hr.gradient-overlay {
+    display: block;
   }
   .gradient-overlay::before {
     content: "";
@@ -72,11 +78,6 @@ figure img {
       from(rgba(255, 255, 255, 0.8)),
       to(transparent)
     );
-    background-image: -o-linear-gradient(
-      bottom,
-      rgba(255, 255, 255, 0.8),
-      transparent
-    );
     background-image: linear-gradient(
       to top,
       rgba(255, 255, 255, 0.8),
@@ -90,11 +91,6 @@ figure img {
       left top,
       from(rgba(0, 0, 0, 0.8)),
       to(transparent)
-    );
-    background-image: -o-linear-gradient(
-      bottom,
-      rgba(0, 0, 0, 0.8),
-      transparent
     );
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   }

@@ -16,8 +16,8 @@ const HeroSection = () => {
       </div>
       <figure role="img" aria-label="Profile photo of Debopriyo Basu">
         <img src={heroImage} alt="Debopriyo Basu" id="hero-image" />
+        <hr className="gradient-overlay"></hr>
       </figure>
-      <span className="gradient-overlay"></span>
     </section>
   );
 };

@@ -23,7 +23,11 @@ const Header = () => {
       <div className="container">
         <p id="logo">db.</p>
         <Navbar />
-        <button onClick={toggleTheme} aria-label="Toggle Light/Dark Theme">
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle Light/Dark Theme"
+          type="button"
+        >
           {isDark ? (
             <CiLight className="theme-icon" />
           ) : (
