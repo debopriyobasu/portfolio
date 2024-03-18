@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap");
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -31,7 +33,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.font-wix {
+  font-family: "Wix Madefor Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 h1,
 h2,
 h3,
@@ -75,7 +81,12 @@ p {
 .mt-2 {
   margin-top: 2rem;
 }
-
+.fw-normal {
+  font-weight: 500;
+}
+.fw-bold {
+  font-weight: bold;
+}
 main {
   position: relative;
 }
@@ -91,7 +102,7 @@ main {
 }
 @media (width < 768px) {
   :root {
-    --font-size-h1: 2.5rem;
+    --font-size-h1: 2.3rem;
   }
   .m-mt-1 {
     margin-top: 1rem;

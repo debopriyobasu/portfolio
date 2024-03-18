@@ -27,6 +27,7 @@
     "vite": "^5.1.0"
   },
   "browserslist": [
-    "defaults"
+    "last 2 versions",
+    "not dead"
   ]
 }
