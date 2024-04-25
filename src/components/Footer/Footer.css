@@ -1,0 +1,15 @@
+footer {
+  background-color: var(--bg-dark);
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding: 1rem;
+}
+footer p {
+  color: var(--font-dark);
+}
+[data-theme="dark"] footer {
+  background-color: var(--bg-light);
+}
+[data-theme="dark"] footer p {
+  color: var(--font-light);
+}

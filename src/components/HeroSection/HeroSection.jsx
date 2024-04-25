@@ -1,18 +1,18 @@
-import "../styles/HeroSection.css";
-import useGreeting from "../hooks/useGreeting";
-import heroImage from "../assets/hero_image.webp";
+import "./HeroSection.css";
+import { salutation } from "../../utils/appUtils";
+import heroImage from "../../assets/hero_image.webp";
 const HeroSection = () => {
-  const greeting = useGreeting();
+  const greeting = salutation();
   return (
     <section id="hero" className="container">
       <div id="hero-text">
-        <h1 tabIndex={0} className="font-wix fw-bold">
+        <h1 tabIndex={0} className="font-jakarta fw-bold">
           {greeting}!
           <br /> I am Debopriyo Basu
         </h1>
-        <h3 className="mt-2 m-mt-1 fw-normal" tabIndex={0}>
+        <p className="mt-2 m-mt-1" tabIndex={0}>
           A software engineer who builds beautiful and engaging web experiences
-        </h3>
+        </p>
       </div>
       <figure role="img" aria-label="Profile photo of Debopriyo Basu">
         <img src={heroImage} alt="Debopriyo Basu" id="hero-image" />

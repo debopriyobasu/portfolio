@@ -2,10 +2,7 @@
   width: 2rem;
   height: 2rem;
 }
-button {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+button.theme-toggle {
   z-index: 3;
   background-color: transparent;
   outline: none;
