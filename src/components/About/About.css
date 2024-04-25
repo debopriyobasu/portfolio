@@ -1,0 +1,7 @@
+section#about {
+  min-height: calc(100vh - 4rem);
+  padding: 3rem 0;
+}
+.mw-70ch {
+  max-width: 70ch;
+}

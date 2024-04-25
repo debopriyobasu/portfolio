@@ -1,0 +1,6 @@
+.certificate img {
+  width: 100%;
+  object-fit: fill;
+  max-width: 30rem;
+  border-radius: 0.5rem;
+}

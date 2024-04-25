@@ -3,7 +3,9 @@ section#hero {
   grid-template-columns: repeat(12, 1fr);
   justify-content: space-around;
   align-items: center;
-  height: 100dvh;
+  height: calc(100dvh - 4rem);
+  padding-top: 2rem;
+  overflow: hidden;
 }
 #hero-text {
   grid-column: 1 / span 7;

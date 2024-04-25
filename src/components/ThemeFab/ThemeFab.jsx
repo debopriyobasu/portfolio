@@ -1,7 +1,7 @@
 import { CiLight } from "react-icons/ci";
 import { CiDark } from "react-icons/ci";
 import { useState } from "react";
-import "../styles/ThemeFab.css";
+import "./ThemeFab.css";
 const ThemeFab = () => {
   const [isDark, setIsDark] = useState(false);
 
@@ -20,6 +20,7 @@ const ThemeFab = () => {
       onClick={toggleTheme}
       aria-label="Toggle Light/Dark Theme"
       type="button"
+      className="theme-toggle pointer"
     >
       {isDark ? (
         <CiLight className="theme-icon" />
