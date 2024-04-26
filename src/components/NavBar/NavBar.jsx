@@ -1,5 +1,5 @@
 import "./NavBar.css";
-import { Link } from "react-scroll";
+import { Link, animateScroll } from "react-scroll";
 import { CiChat1 } from "react-icons/ci";
 import ThemeFab from "../ThemeFab/ThemeFab";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
@@ -10,7 +10,14 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="container">
-        <p className="logo fw-bold pointer">Db.</p>
+        <p
+          className="logo fw-bold pointer"
+          onClick={() =>
+            animateScroll.scrollToTop({ duration: 500, smooth: true })
+          }
+        >
+          Db.
+        </p>
 
         <div className="desktopMenu">
           <Link

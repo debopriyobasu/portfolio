@@ -47,6 +47,12 @@ section#contact {
   height: 2rem;
   cursor: pointer;
 }
+.icon-link {
+  color: var(--font-light);
+}
+.icon-link:hover {
+  opacity: 0.7;
+}
 [data-theme="dark"] .icon-link {
   color: var(--font-dark);
 }
