@@ -13,9 +13,14 @@ section#hero {
 figure {
   grid-column: 8 / span 5;
   align-self: flex-end;
+  max-width: 100%;
+  height: auto;
 }
 figure img {
-  vertical-align: bottom;
+  /* vertical-align: bottom; */
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .gradient-overlay {
   display: none;

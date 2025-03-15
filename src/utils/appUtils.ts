@@ -1,4 +1,4 @@
-export const salutation = () => {
+export const salutation = (): string => {
   const date = new Date();
   const hours = date.getHours();
 

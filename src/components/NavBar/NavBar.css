@@ -30,6 +30,11 @@
   box-sizing: border-box;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid transparent;
+  color: var(--font-light);
+}
+[data-theme="dark"] .desktopMenuListItem,
+[data-theme="dark"] .listItem {
+  color: var(--font-dark);
 }
 .desktopMenuListItem:hover,
 .desktopMenuListItem.active {

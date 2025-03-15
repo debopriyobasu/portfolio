@@ -5,8 +5,9 @@ import ThemeFab from "../ThemeFab/ThemeFab";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useState } from "react";
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
+
   return (
     <nav className="navbar">
       <div className="container">
@@ -28,6 +29,7 @@ const NavBar = () => {
             offset={-64}
             duration={500}
             className="desktopMenuListItem pointer"
+            href="#hero"
           >
             Home
           </Link>
@@ -39,11 +41,10 @@ const NavBar = () => {
             offset={-30}
             duration={500}
             className="desktopMenuListItem pointer"
+            href="#about"
           >
             About
           </Link>
-          {/* <Link className="desktopMenuListItem pointer">Work Experience</Link>
-          <Link className="desktopMenuListItem pointer">Projects</Link> */}
         </div>
         <div className="nav-buttons">
           <Link
@@ -53,6 +54,7 @@ const NavBar = () => {
             smooth={true}
             offset={-30}
             duration={500}
+            href="#contact"
           >
             <CiChat1 className="desktopMenuImg" />
             Contact Me
@@ -72,6 +74,7 @@ const NavBar = () => {
             <Link
               activeClass="active"
               to="hero"
+              href="#hero"
               spy={true}
               smooth={true}
               offset={-64}
@@ -84,6 +87,7 @@ const NavBar = () => {
             <Link
               activeClass="active"
               to="about"
+              href="#about"
               spy={true}
               smooth={true}
               offset={-30}
@@ -96,6 +100,7 @@ const NavBar = () => {
             <Link
               activeClass="active"
               to="contact"
+              href="#contact"
               spy={true}
               smooth={true}
               offset={-30}
@@ -105,8 +110,6 @@ const NavBar = () => {
             >
               Contact
             </Link>
-            {/* <Link className="desktopMenuListItem pointer">Work Experience</Link>
-          <Link className="desktopMenuListItem pointer">Projects</Link> */}
           </div>
         )}
       </div>

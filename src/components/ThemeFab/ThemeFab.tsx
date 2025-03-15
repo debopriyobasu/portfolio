@@ -1,11 +1,11 @@
-import { CiLight } from "react-icons/ci";
-import { CiDark } from "react-icons/ci";
+import { CiLight, CiDark } from "react-icons/ci";
 import { useState } from "react";
 import "./ThemeFab.css";
+
 const ThemeFab = () => {
   const [isDark, setIsDark] = useState(false);
 
-  const toggleTheme = () => {
+  const toggleTheme = (): void => {
     const root = document.documentElement;
     if (isDark) {
       root.setAttribute("data-theme", "light");
@@ -15,6 +15,7 @@ const ThemeFab = () => {
       setIsDark(true);
     }
   };
+
   return (
     <button
       onClick={toggleTheme}

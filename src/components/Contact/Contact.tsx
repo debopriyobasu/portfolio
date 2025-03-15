@@ -2,22 +2,34 @@ import "./Contact.css";
 import { SiLinkedin, SiMedium, SiGithub, SiLeetcode } from "react-icons/si";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import { content } from "../../content";
+import { FormEvent } from "react";
+
 const Contact = () => {
-  const form = useRef();
-  const sendEmail = (e) => {
+  const form = useRef<HTMLFormElement | null>(null);
+  interface EmailJSResponse {
+    text: string;
+  }
+
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_55aw1qn", "template_od2bqfy", form.current, {
-        publicKey: "Vg_n_0vZfmPLxr7c2",
-      })
+      .sendForm(
+        "service_55aw1qn",
+        "template_od2bqfy",
+        form.current as HTMLFormElement,
+        {
+          publicKey: "Vg_n_0vZfmPLxr7c2",
+        }
+      )
       .then(
-        (result) => {
+        (result: EmailJSResponse) => {
           console.log("SUCCESS!", result.text);
-          e.target.reset();
+          e.currentTarget.reset();
           alert("Thanks! Your email has been sent.");
         },
-        (error) => {
+        (error: EmailJSResponse) => {
           console.log("FAILED...", error.text);
         }
       );
@@ -25,11 +37,8 @@ const Contact = () => {
   return (
     <section id="contact">
       <div className="container">
-        <h2 className="text-center">Contact Me</h2>
-        <p className="mt-1 text-center">
-          Feel free to contact me to discuss any work opportunities, or for any
-          suggestions
-        </p>
+        <h2 className="text-center">{content.contact.title}</h2>
+        <p className="mt-1 text-center">{content.contact.description}</p>
         <form ref={form} onSubmit={sendEmail} className="contactForm mt-2">
           <input
             type="text"
@@ -45,7 +54,7 @@ const Contact = () => {
           />
           <textarea
             name="message"
-            rows="5"
+            rows={5}
             placeholder="Your Message"
             className="msg"
           ></textarea>
@@ -59,6 +68,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             target="_blank"
             className="icon-link"
+            aria-label="Connect with Debopriyo on LinkedIn"
           >
             <SiLinkedin className="icon" />
           </a>
@@ -67,6 +77,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             target="_blank"
             className="icon-link"
+            aria-label="Connect with Debopriyo on Medium"
           >
             <SiMedium className="icon" />
           </a>
@@ -75,6 +86,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             target="_blank"
             className="icon-link"
+            aria-label="View Debopriyo's github profile"
           >
             <SiGithub className="icon" />
           </a>
@@ -83,6 +95,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             target="_blank"
             className="icon-link"
+            aria-label="View Debopriyo's Leetcode profile"
           >
             <SiLeetcode className="icon" />
           </a>

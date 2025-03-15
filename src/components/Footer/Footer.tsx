@@ -1,9 +1,11 @@
 import "./Footer.css";
+import { content } from "../../content";
+
 const Footer = () => {
   return (
     <footer>
       <p className="text-center">
-        &copy; {new Date().getFullYear()}. Developed by Debopriyo Basu
+        {content.footer.copyright.replace("{year}", new Date().getFullYear())}
       </p>
     </footer>
   );
