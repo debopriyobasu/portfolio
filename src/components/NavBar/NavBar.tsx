@@ -1,119 +1,122 @@
 import "./NavBar.css";
-import { Link, animateScroll } from "react-scroll";
-import { CiChat1 } from "react-icons/ci";
+import { Link } from "react-scroll";
+import { HiOutlineHome, HiOutlineUser, HiOutlineChatAlt2 } from "react-icons/hi";
 import ThemeFab from "../ThemeFab/ThemeFab";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { useState } from "react";
 
 const NavBar: React.FC = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
   return (
-    <nav className="navbar">
-      <div className="container">
-        <p
-          className="logo fw-bold pointer"
-          onClick={() =>
-            animateScroll.scrollToTop({ duration: 500, smooth: true })
-          }
-        >
-          Db.
-        </p>
-
-        <div className="desktopMenu">
-          <Link
-            activeClass="active"
-            to="hero"
-            spy={true}
-            smooth={true}
-            offset={-64}
-            duration={500}
-            className="desktopMenuListItem pointer"
-            href="#hero"
+    <>
+      {/* Top Navigation for Logo, Theme Toggle, and Desktop Menu */}
+      <nav className="navbar">
+        <div className="container">
+          <p
+            className="logo fw-bold pointer"
+            onClick={() =>
+              window.scrollTo({ top: 0, behavior: "smooth" })
+            }
           >
-            Home
-          </Link>
-          <Link
-            activeClass="active"
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-30}
-            duration={500}
-            className="desktopMenuListItem pointer"
-            href="#about"
-          >
-            About
-          </Link>
-        </div>
-        <div className="nav-buttons">
-          <Link
-            className="desktopMenuBtn btn pointer"
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-30}
-            duration={500}
-            href="#contact"
-          >
-            <CiChat1 className="desktopMenuImg" />
-            Contact Me
-          </Link>
-          <ThemeFab />
-        </div>
-        <div className="mob-items">
-          <ThemeFab />
-          <HiOutlineMenuAlt3
-            className="mobMenu"
-            onClick={() => setShowMenu((prev) => !prev)}
-          />
-        </div>
-
-        {showMenu && (
-          <div className="navMenu">
+            Db.
+          </p>
+          <div className="desktopMenu">
             <Link
               activeClass="active"
               to="hero"
-              href="#hero"
               spy={true}
               smooth={true}
-              offset={-64}
+              offset={0}
               duration={500}
-              className="listItem pointer"
-              onClick={() => setShowMenu(false)}
+              containerId="scrollable-container"
+              className="desktopMenuListItem"
+              href="#hero"
+              aria-label="Go to Home"
             >
               Home
             </Link>
             <Link
               activeClass="active"
               to="about"
-              href="#about"
               spy={true}
               smooth={true}
-              offset={-30}
+              offset={0}
               duration={500}
-              className="listItem pointer"
-              onClick={() => setShowMenu(false)}
+              containerId="scrollable-container"
+              className="desktopMenuListItem"
+              href="#about"
+              aria-label="Go to About"
             >
               About
             </Link>
             <Link
               activeClass="active"
               to="contact"
-              href="#contact"
               spy={true}
               smooth={true}
-              offset={-30}
+              offset={-10}
               duration={500}
-              className="listItem pointer"
-              onClick={() => setShowMenu(false)}
+              containerId="scrollable-container"
+              className="desktopMenuListItem"
+              href="#contact"
+              aria-label="Go to Contact"
             >
               Contact
             </Link>
           </div>
-        )}
-      </div>
-    </nav>
+          <ThemeFab />
+        </div>
+      </nav>
+
+      {/* Bottom Navigation for Mobile */}
+      <nav className="bottom-nav">
+        <Link
+          activeClass="active"
+          to="hero"
+          spy={true}
+          hashSpy={true}
+          smooth={true}
+          offset={-64}
+          duration={500}
+          containerId="scrollable-container"
+          className="bottom-nav-item"
+          href="#hero"
+          aria-label="Go to Home"
+        >
+          <HiOutlineHome className="bottom-nav-icon" />
+          <span>Home</span>
+        </Link>
+        <Link
+          activeClass="active"
+          to="about"
+          spy={true}
+          hashSpy={true}
+          smooth={true}
+          offset={-64}
+          duration={500}
+          containerId="scrollable-container"
+          className="bottom-nav-item"
+          href="#about"
+          aria-label="Go to About"
+        >
+          <HiOutlineUser className="bottom-nav-icon" />
+          <span>About</span>
+        </Link>
+        <Link
+          activeClass="active"
+          to="contact"
+          spy={true}
+          hashSpy={true}
+          smooth={true}
+          offset={-64}
+          duration={500}
+          containerId="scrollable-container"
+          className="bottom-nav-item"
+          href="#contact"
+          aria-label="Go to Contact"
+        >
+          <HiOutlineChatAlt2 className="bottom-nav-icon" />
+          <span>Contact</span>
+        </Link>
+      </nav>
+    </>
   );
 };
 

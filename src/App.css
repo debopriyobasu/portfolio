@@ -1,0 +1,15 @@
+main {
+  height: calc(100vh - 3.5rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: 5rem;
+}
+
+@media (width < 768px) {
+  main {
+    padding-top: 0;
+  }
+}

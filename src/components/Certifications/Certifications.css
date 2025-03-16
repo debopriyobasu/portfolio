@@ -1,8 +1,0 @@
-.certificates {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  width: 100%;
-  justify-content: center;
-}
