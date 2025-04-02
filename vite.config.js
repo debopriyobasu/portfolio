@@ -9,4 +9,11 @@ export default defineConfig({
       plugins: [autoprefixer()],
     },
   },
+  server: {
+    host: true,
+    port: 4173,
+  },
+  build: {
+    outDir: "dist",
+  },
 });
